@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5mk6p158yq0w"]
+
+[ext_resource type="Script" path="res://scenes/game/scripts/object_scripts/teleporter.gd" id="1_fy8cb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vu0t2"]
+size = Vector2(76, 36)
+
+[node name="Teleporter" type="Node2D"]
+script = ExtResource("1_fy8cb")
+
+[node name="CollisionShape2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D"]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_vu0t2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -60.0
+offset_top = -35.0
+offset_right = 68.0
+offset_bottom = 5.0
+text = "E - Go up stairs"
+
+[connection signal="body_entered" from="CollisionShape2D" to="." method="_on_collision_shape_2d_body_entered"]
+[connection signal="body_exited" from="CollisionShape2D" to="." method="_on_collision_shape_2d_body_exited"]

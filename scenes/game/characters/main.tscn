@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://tnfj6vqlox0i"]
+[gd_scene load_steps=6 format=3 uid="uid://tnfj6vqlox0i"]
 
 [ext_resource type="PackedScene" uid="uid://b6bbn8u0navok" path="res://scenes/game/characters/player.tscn" id="1_pjv28"]
 [ext_resource type="Texture2D" uid="uid://bu1nccmve3j5l" path="res://assets/sprites/tilesheet_complete.png" id="2_lxfo0"]
+[ext_resource type="PackedScene" uid="uid://c5mk6p158yq0w" path="res://scenes/game/objects/teleporter.tscn" id="3_ldjib"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_frcsp"]
 texture = ExtResource("2_lxfo0")
@@ -742,3 +743,11 @@ position = Vector2(66, 49)
 tile_set = SubResource("TileSet_7o2p5")
 format = 2
 layer_0/tile_data = PackedInt32Array(655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 589860, 0, 0, 589861, 0, 0, 589862, 0, 0, 589863, 0, 0, 589864, 0, 0, 589865, 0, 0, 589866, 0, 0, 589867, 0, 0, 589868, 0, 0, 589869, 0, 0, 589870, 0, 0, 589871, 0, 0, 589872, 0, 0, 589873, 0, 0, 589874, 0, 0, 589875, 0, 0, 589876, 0, 0, 589877, 0, 0, 589878, 0, 0, 589879, 0, 0, 589880, 0, 0, 589881, 0, 0, 589882, 0, 0, 589883, 0, 0, 589884, 0, 0, 589885, 0, 0, 589886, 0, 0, 589887, 0, 0, 589888, 0, 0, 589889, 0, 0, 589890, 0, 0, 589891, 0, 0, 589892, 0, 0, 589893, 0, 0, 589894, 0, 0, 589895, 0, 0)
+
+[node name="Teleporter2" parent="." node_paths=PackedStringArray("other_teleporter") instance=ExtResource("3_ldjib")]
+position = Vector2(731, 71)
+other_teleporter = NodePath("../Teleporter")
+
+[node name="Teleporter" parent="." node_paths=PackedStringArray("other_teleporter") instance=ExtResource("3_ldjib")]
+position = Vector2(406, 78)
+other_teleporter = NodePath("../Teleporter2")

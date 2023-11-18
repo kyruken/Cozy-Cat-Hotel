@@ -7,14 +7,10 @@ class_name CustomerInRoom
 @export var animator : AnimationPlayer
 
 func Enter():
-	$Timer.start()
 	print("timer started")
 	
 func Physics_Update(delta: float):
 	pass
 
-
-func _on_timer_timeout():
-	$Timer.stop()
-	print("timer ended, leaving")
+func _on_customer_customer_leave_room():
 	Transitioned.emit(self, "LeaveRoom")

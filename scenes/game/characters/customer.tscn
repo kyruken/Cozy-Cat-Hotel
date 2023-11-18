@@ -37,11 +37,8 @@ player = NodePath("../..")
 script = ExtResource("6_cwlx5")
 player = NodePath("../..")
 
-[node name="Timer" type="Timer" parent="StateMachine/TimeInRoom"]
-wait_time = 5.0
-
 [node name="LeaveRoom" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
 script = ExtResource("6_bx6iq")
 player = NodePath("../..")
 
-[connection signal="timeout" from="StateMachine/TimeInRoom/Timer" to="StateMachine/TimeInRoom" method="_on_timer_timeout"]
+[connection signal="customer_leave_room" from="." to="StateMachine/TimeInRoom" method="_on_customer_customer_leave_room"]

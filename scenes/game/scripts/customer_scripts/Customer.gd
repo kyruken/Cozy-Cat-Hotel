@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal customer_leave_room()
+
 @export var main : Node2D
 var speed := 500.0
 var goto_location
@@ -17,3 +19,6 @@ func move_to_room(location : Vector2):
 	print(location)
 	goto_location = location
 	hasLocation = true
+
+func room_timer_timeout():
+	customer_leave_room.emit()

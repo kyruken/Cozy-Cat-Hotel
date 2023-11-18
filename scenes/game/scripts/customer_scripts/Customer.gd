@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var main : Node2D
 var speed := 500.0
 var goto_location
+var despawn_location = Vector2(964, 94)
 var hasLocation = false
 
 func _ready():

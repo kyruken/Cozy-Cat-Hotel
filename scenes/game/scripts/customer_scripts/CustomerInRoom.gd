@@ -1,5 +1,5 @@
 extends State
-class_name CustomerWalk
+class_name CustomerInRoom
 
 @export var player : CharacterBody2D
 @export var speed = 300
@@ -7,11 +7,14 @@ class_name CustomerWalk
 @export var animator : AnimationPlayer
 
 func Enter():
-	pass
+	$Timer.start()
+	print("timer started")
 	
 func Physics_Update(delta: float):
-	if (player.global_position.x < player.goto_location.x):
-		player.global_position.x += 300 * delta
-	else:
-		Transitioned.emit(self, "TimeInRoom")
+	pass
 
+
+func _on_timer_timeout():
+	$Timer.stop()
+	print("timer ended, leaving")
+	Transitioned.emit(self, "LeaveRoom")

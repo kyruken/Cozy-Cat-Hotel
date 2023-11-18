@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var main : Node2D
 var speed := 500.0
+var goto_location
+var hasLocation = false
 
 func _ready():
 	main = get_tree().get_root().get_node("Main")
@@ -9,7 +11,8 @@ func _ready():
 	main.scan_for_rooms()
 
 func move_to_room(location : Vector2):
-	pass
 	##call function in customer_queue to move customer to that location
 	print("moving to")
 	print(location)
+	goto_location = location
+	hasLocation = true

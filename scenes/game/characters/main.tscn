@@ -750,3 +750,9 @@ layer_0/tile_data = PackedInt32Array(655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 5
 [node name="CustomerSpawner" parent="." instance=ExtResource("4_hwubd")]
 position = Vector2(285, 96)
 customer_scene = ExtResource("5_dceo3")
+
+[node name="Room2" type="Node2D" parent="."]
+position = Vector2(679, 98)
+
+[node name="Room1" type="Node2D" parent="."]
+position = Vector2(521, 94)

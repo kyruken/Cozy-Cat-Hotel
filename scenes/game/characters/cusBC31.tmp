@@ -20,17 +20,15 @@ texture = ExtResource("2_iaeg5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8bua0")
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_ynga3")
-initial_state = NodePath("IdleInLine")
 
-[node name="IdleInLine" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+[node name="IdleInLine" type="Node" parent="StateMachine"]
 script = ExtResource("4_6ue2h")
-player = NodePath("../..")
 
-[node name="WalkToRoom" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+[node name="WalkToRoom" type="Node" parent="StateMachine"]
 script = ExtResource("5_fc68d")
-player = NodePath("../..")
+speed = null
 
 [node name="LeaveRoom" type="Node" parent="StateMachine"]
 script = ExtResource("6_bx6iq")

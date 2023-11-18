@@ -10,7 +10,10 @@ func Enter():
 	pass
 	
 func Physics_Update(delta: float):
-	pass
 	##Find available room location
 	##Walk towards available room
 	##Once collide with room collider, set visible=false
+	if (player.global_position.x < player.goto_location.x):
+		player.global_position.x += 300 * delta
+		print(player.global_position.x,", ", player.goto_location.x)
+

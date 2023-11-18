@@ -1,7 +1,7 @@
 extends Node2D
 
 var queue_of_customers = []
-var rooms = [[false,Vector2(0,0)], [false, Vector2(1,1)]]
+var rooms = [[false,Vector2(521, 94)], [false, Vector2(679, 98)]]
 	
 func add_customer(customer):
 	queue_of_customers.append(customer)
@@ -22,7 +22,6 @@ func scan_for_rooms():
 		
 		if !room_has_customer:
 			var current_customer = queue_of_customers[0]
-			print(queue_of_customers[0])
 			current_customer.move_to_room(room_location)
 			pop_customer()
 			current_room[0] = true

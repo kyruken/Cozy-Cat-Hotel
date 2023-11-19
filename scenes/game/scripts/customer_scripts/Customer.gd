@@ -10,7 +10,6 @@ enum CustomerState {
 var current_state: CustomerState = CustomerState.IDLE
 var target_room: Room
 var room_location: Vector2
-var has_room: bool = false
 var speed := 500.0
 var time_in_room: float = 5.0
 var max_stay_time: float = 60.0  # Set the maximum stay time in seconds
@@ -27,25 +26,12 @@ func _process(delta):
 			pass
 		CustomerState.MOVING_TO_ROOM:
 			move_to_room(delta, room_location)
+			if (self.global_position.floor() == room_location):
+				current_state = CustomerState.IDLE
 		CustomerState.IN_ROOM:
 			handle_in_room()
-			pass
 		CustomerState.LEAVING:
 			leave_hotel(delta, despawn_location.global_position)
-
-func find_nearest_target():
-	var nearest_target = null
-	var nearest_distance = INF
-	for node in get_tree().get_root().get_node("Main").get_tree().get_nodes_in_group("room"):
-		if (node is Room) and (node.hasCustomer == false):
-			print(node)
-			var distance = position.distance_to(node.global_position)
-			if (node.hasCustomer == false):
-				nearest_target = node
-				break
-	
-	if (nearest_target):
-		current_state = CustomerState.MOVING_TO_ROOM
 
 func set_room(room):
 	room_location = room
@@ -56,20 +42,17 @@ func move_to_room(delta, location):
 	var desired_velocity = speed * dir
 	velocity = desired_velocity * delta
 	move_and_slide()
-	
-	if (self.global_position.floor() == room_location):
-		current_state = CustomerState.IDLE
 
 func finish_time_in_room():
 	current_state = CustomerState.IN_ROOM
 
 func handle_in_room():
 	if $Timer.is_stopped():
+		print('start timer')
 		$Timer.start()
 
 func leave_hotel(delta, location):
 	move_to_room(delta, location)
 	
 func _on_timer_timeout():
-	print('leave da room')
 	current_state = CustomerState.LEAVING

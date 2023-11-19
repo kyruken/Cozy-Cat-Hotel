@@ -19,11 +19,12 @@ var despawn_location: Node2D
 
 func _ready():
 	despawn_location = get_tree().get_root().get_node("Main").get_tree().get_nodes_in_group("despawn")[0]
+	current_state = CustomerState.MOVING_TO_ROOM
 	
 func _process(delta):
 	match current_state:
 		CustomerState.IDLE:
-			current_state = CustomerState.MOVING_TO_ROOM
+			pass
 		CustomerState.MOVING_TO_ROOM:
 			move_to_room(delta, room_location)
 		CustomerState.IN_ROOM:

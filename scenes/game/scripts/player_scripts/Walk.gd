@@ -11,7 +11,7 @@ func Physics_Update(delta: float):
 	move(delta, handle_input())
 	flip_sprite()
 	
-	check_for_state_transition()
+	Check_State_Transition()
 	
 	## Conditions for state changes ##
 	## Jump state if want to implement ##
@@ -19,6 +19,10 @@ func Physics_Update(delta: float):
 #		player.velocity.y -= player.jump_impulse
 #		print(player.velocity.y)
 
+func Check_State_Transition():
+	if (owner.velocity.x == 0):
+		Transitioned.emit(self, "idle")
+		
 func handle_input():
 	var input_direction_x: float = (
 		Input.get_action_strength("ui_right")
@@ -36,8 +40,5 @@ func flip_sprite():
 		sprite.flip_h = 0
 	elif (owner.velocity.x > 0):
 		sprite.flip_h = 1
-
-func check_for_state_transition():
-	if (owner.velocity == Vector2.ZERO):
-		Transitioned.emit(self, "idle")
+		
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://orasxsbujopa"]
+[gd_scene load_steps=2 format=3 uid="uid://cmtga7hq3oywn"]
 
 [ext_resource type="Script" path="res://scenes/game/scripts/object_scripts/Room.gd" id="1_q60ym"]
 

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bu1nccmve3j5l" path="res://assets/sprites/tilesheet_complete.png" id="2_lxfo0"]
 [ext_resource type="PackedScene" uid="uid://du5kxdp54tqn0" path="res://scenes/game/objects/customer_spawner.tscn" id="4_hwubd"]
 [ext_resource type="PackedScene" uid="uid://deyt8tld85lwj" path="res://scenes/game/characters/customer.tscn" id="5_dceo3"]
-[ext_resource type="PackedScene" uid="uid://orasxsbujopa" path="res://scenes/game/objects/room.tscn" id="6_1xmcc"]
+[ext_resource type="PackedScene" uid="uid://cmtga7hq3oywn" path="res://scenes/game/objects/room.tscn" id="6_1xmcc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_uk734"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

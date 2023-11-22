@@ -6,13 +6,13 @@ extends Node2D
 
 func _process(delta):
 	move_queued_customer_to_room()
-	print(rooms_controller.rooms)
 
 func move_queued_customer_to_room():
 	var potential_available_room = rooms_controller.check_room_is_available()
 	if (potential_available_room and !queue_controller.is_empty()):
 		var available_customer = queue_controller.pop()
 		rooms_controller.assign_customer_to_room(available_customer, potential_available_room)
+		available_customer.set_location(potential_available_room.global_position)
 	
 func _on_customer_spawner_customer_spawned(customer):
 	queue_controller.add_customer_to_queue(customer)

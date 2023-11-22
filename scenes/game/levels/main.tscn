@@ -772,3 +772,5 @@ position = Vector2(730, 160)
 
 [node name="Room2" parent="." instance=ExtResource("6_iyue2")]
 position = Vector2(891, 165)
+
+[connection signal="customer_spawned" from="CustomerSpawner" to="GameController" method="_on_customer_spawner_customer_spawned"]

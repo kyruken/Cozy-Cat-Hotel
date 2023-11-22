@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhejipuy60jey"]
+
+[ext_resource type="Script" path="res://scenes/game/scripts/object_scripts/QueueController.gd" id="1_dxup6"]
+
+[node name="QueueController" type="Node2D"]
+script = ExtResource("1_dxup6")

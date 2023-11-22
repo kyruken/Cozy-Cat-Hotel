@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://8g4535cqpdnx"]
+
+[ext_resource type="Script" path="res://scenes/game/scripts/object_scripts/RoomsController.gd" id="1_k8pl5"]
+
+[node name="RoomsController" type="Node2D"]
+script = ExtResource("1_k8pl5")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://wanix5lc64qs"]
+
+[ext_resource type="Script" path="res://scenes/game/scripts/object_scripts/GameController.gd" id="1_duepb"]
+[ext_resource type="PackedScene" uid="uid://bhejipuy60jey" path="res://scenes/game/objects/queue_controller.tscn" id="2_2ceyl"]
+[ext_resource type="PackedScene" uid="uid://8g4535cqpdnx" path="res://scenes/game/objects/rooms_controller.tscn" id="3_aobjc"]
+
+[node name="GameController" type="Node2D" node_paths=PackedStringArray("queue_controller", "rooms_controller")]
+script = ExtResource("1_duepb")
+queue_controller = NodePath("QueueController")
+rooms_controller = NodePath("RoomsController")
+
+[node name="QueueController" parent="." instance=ExtResource("2_2ceyl")]
+
+[node name="RoomsController" parent="." instance=ExtResource("3_aobjc")]

@@ -9,15 +9,13 @@ enum CustomerState {
 
 var current_state: CustomerState = CustomerState.IDLE
 var target_room: Room
-var room_location: Vector2
+var room_location: Vector2 = Vector2(260, 161)
 var speed := 500.0
-var time_in_room: float = 5.0
-var max_stay_time: float = 60.0  # Set the maximum stay time in seconds
 
-var despawn_location: Node2D
+var timer : Timer
 
 func _ready():
-	despawn_location = get_tree().get_root().get_node("Main").get_tree().get_nodes_in_group("despawn")[0]
+	timer = get_tree().get_root().get_node("Main").get_node("RoomTimer")
 	current_state = CustomerState.MOVING_TO_ROOM
 	
 func _process(delta):
@@ -31,7 +29,8 @@ func _process(delta):
 		CustomerState.IN_ROOM:
 			handle_in_room()
 		CustomerState.LEAVING:
-			leave_hotel(delta, despawn_location.global_position)
+			pass
+#			leave_hotel(delta, despawn_location.global_position)
 
 func set_room(room):
 	room_location = room
@@ -42,17 +41,14 @@ func move_to_room(delta, location):
 	var desired_velocity = speed * dir
 	velocity = desired_velocity * delta
 	move_and_slide()
-
-func finish_time_in_room():
-	current_state = CustomerState.IN_ROOM
-
+	
 func handle_in_room():
-	if $Timer.is_stopped():
+	if timer.is_stopped():
 		print('start timer')
-		$Timer.start()
+		timer.start()
 
 func leave_hotel(delta, location):
 	move_to_room(delta, location)
 	
-func _on_timer_timeout():
-	current_state = CustomerState.LEAVING
+#func _on_timer_timeout():
+#	current_state = CustomerState.LEAVING

@@ -30,3 +30,5 @@ sprite = NodePath("../../Sprite2D")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_xxufk")
+
+[node name="Camera2D" type="Camera2D" parent="."]

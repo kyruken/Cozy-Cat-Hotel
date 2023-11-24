@@ -4,3 +4,5 @@
 
 [node name="Room" type="Node2D" groups=["room"]]
 script = ExtResource("1_q60ym")
+
+[node name="Timer" type="Timer" parent="."]

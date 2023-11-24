@@ -13,8 +13,6 @@ func check_room_is_available():
 	return false
 			
 func assign_customer_to_room(customer, room):
-	print('runs')
 	if (room.hasCustomer == false):
-		print('runs')
 		room.set_has_customer()
 		room.set_customer_in_room(customer)

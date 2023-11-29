@@ -25,7 +25,5 @@ text = "[E] to clean"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxArea2D"]
 shape = SubResource("RectangleShape2D_oa02b")
 
-[connection signal="body_entered" from="TextBoxArea2D" to="." method="_on_text_box_area_2d_body_entered"]
 [connection signal="body_entered" from="TextBoxArea2D" to="TextBoxArea2D" method="_on_body_entered"]
-[connection signal="body_exited" from="TextBoxArea2D" to="." method="_on_text_box_area_2d_body_exited"]
 [connection signal="body_exited" from="TextBoxArea2D" to="TextBoxArea2D" method="_on_body_exited"]

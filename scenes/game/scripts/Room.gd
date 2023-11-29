@@ -12,17 +12,20 @@ var customer_in_room
 var current_state: RoomState = RoomState.NO_CUSTOMER
 
 @onready var room_timer = $Timer
+@onready var textbox_area := $TextBoxArea2D
 @onready var location = self.global_position
 
 
 func _process(delta):
 	match current_state:
 		RoomState.NO_CUSTOMER:
-			pass
+			if (customer_in_room):
+				current_state = RoomState.HAS_CUSTOMER
 		RoomState.HAS_CUSTOMER:
-			if (room_timer.is_stopped() and customer_in_room):
+			if (room_timer.is_stopped()):
 				set_has_customer()
 				set_customer_in_room(null)
+				textbox_area.visible = !textbox_area.visible 
 				current_state = RoomState.DIRTY_ROOM
 		RoomState.DIRTY_ROOM:
 			pass

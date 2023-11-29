@@ -11,6 +11,7 @@ script = ExtResource("1_q60ym")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="TextBoxArea2D" type="Area2D" parent="."]
+visible = false
 script = ExtResource("2_mmw5k")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextBoxArea2D"]

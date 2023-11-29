@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dotnhtc7g330h"]
+
+[ext_resource type="Script" path="res://scenes/game/scripts/object_scripts/MoneyInventory.gd" id="1_08bwy"]
+
+[node name="MoneyInventory" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_08bwy")
+
+[node name="MoneyTextLabel" type="RichTextLabel" parent="."]
+offset_right = 66.0
+offset_bottom = 40.0
+text = "Money:"
+
+[node name="MoneyNumberLabel" type="RichTextLabel" parent="."]
+offset_left = 60.0
+offset_right = 126.0
+offset_bottom = 40.0
+text = "0"

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6bbn8u0navok"]
+[gd_scene load_steps=8 format=3 uid="uid://b6bbn8u0navok"]
 
 [ext_resource type="Texture2D" uid="uid://bbin0qho6oss6" path="res://icon.svg" id="1_bb5qj"]
 [ext_resource type="Script" path="res://scenes/game/scripts/player_scripts/player.gd" id="1_gc5ra"]
 [ext_resource type="Script" path="res://scenes/game/scripts/StateMachine.gd" id="2_2281g"]
+[ext_resource type="PackedScene" uid="uid://dotnhtc7g330h" path="res://scenes/game/objects/money_inventory.tscn" id="2_sej3o"]
 [ext_resource type="Script" path="res://scenes/game/scripts/player_scripts/Walk.gd" id="3_2041n"]
 [ext_resource type="Script" path="res://scenes/game/scripts/player_scripts/Idle.gd" id="4_xxufk"]
 
@@ -11,6 +12,9 @@ size = Vector2(120, 120)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_gc5ra")
+
+[node name="MoneyInventory" parent="." instance=ExtResource("2_sej3o")]
+position = Vector2(-558, -322)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)

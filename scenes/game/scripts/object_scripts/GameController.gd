@@ -3,11 +3,18 @@ extends Node2D
 #Game is run by adding customers to the queues, moving them to rooms, and leaving
 @export var queue_controller : QueueController
 @export var rooms_controller : RoomsController
+
+@onready var player = get_tree().get_first_node_in_group("player")
+@onready var rooms = get_tree().get_nodes_in_group("room")
 @onready var timer = $Timer
 
 var minimum_time_in_room := 5.0
 var maximum_time_in_room := 10.0
 
+func _ready():
+	for room in rooms:
+		room.room_is_cleaned.connect(_on_room_is_cleaned)
+	
 func _process(delta):
 	move_queued_customer_to_room()
 
@@ -28,3 +35,5 @@ func move_queued_customer_to_room():
 func _on_customer_spawner_customer_spawned(customer):
 	queue_controller.add_customer_to_queue(customer)
 
+func _on_room_is_cleaned():
+	player.get_node("MoneyInventory").increment_money(2)

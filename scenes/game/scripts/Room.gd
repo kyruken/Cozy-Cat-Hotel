@@ -1,6 +1,8 @@
 extends Node2D
 class_name Room
 
+signal room_is_cleaned
+
 enum RoomState {
 	NO_CUSTOMER,
 	HAS_CUSTOMER,
@@ -47,6 +49,7 @@ func handle_dirty_room(body):
 		set_customer_in_room(null)
 		current_state = RoomState.NO_CUSTOMER
 		textbox_area.visible = !textbox_area.visible 
+		room_is_cleaned.emit()
 
 func handle_progress_bar():
 	if !has_progress_bar_max:

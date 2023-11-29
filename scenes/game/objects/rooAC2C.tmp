@@ -10,10 +10,12 @@ script = ExtResource("1_q60ym")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="TextBoxArea2D" type="Area2D" parent="."]
+[node name="CollisionTextBar" type="Node" parent="."]
 script = ExtResource("2_mmw5k")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextBoxArea2D"]
+[node name="Area2D" type="Area2D" parent="CollisionTextBar"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CollisionTextBar/Area2D"]
 visible = false
 offset_left = -36.0
 offset_top = -32.0
@@ -21,8 +23,8 @@ offset_right = 61.0
 offset_bottom = 8.0
 text = "[E] to clean"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionTextBar/Area2D"]
 shape = SubResource("RectangleShape2D_oa02b")
 
-[connection signal="body_entered" from="TextBoxArea2D" to="TextBoxArea2D" method="_on_body_entered"]
-[connection signal="body_exited" from="TextBoxArea2D" to="TextBoxArea2D" method="_on_body_exited"]
+[connection signal="body_entered" from="CollisionTextBar/Area2D" to="CollisionTextBar" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CollisionTextBar/Area2D" to="CollisionTextBar" method="_on_area_2d_body_exited"]

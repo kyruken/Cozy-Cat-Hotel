@@ -16,3 +16,6 @@ func assign_customer_to_room(customer, room):
 	if (room.hasCustomer == false):
 		room.set_has_customer()
 		room.set_customer_in_room(customer)
+
+func add_new_room(new_room):
+	rooms.append(new_room)

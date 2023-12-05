@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxp811i3h36no"]
+[gd_scene load_steps=11 format=3 uid="uid://dxp811i3h36no"]
 
 [ext_resource type="PackedScene" uid="uid://b6bbn8u0navok" path="res://scenes/game/characters/player.tscn" id="1_eqbwx"]
 [ext_resource type="Texture2D" uid="uid://bu1nccmve3j5l" path="res://assets/sprites/tilesheet_complete.png" id="2_n6vlg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://du5kxdp54tqn0" path="res://scenes/game/objects/customer_spawner.tscn" id="4_muu3m"]
 [ext_resource type="PackedScene" uid="uid://deyt8tld85lwj" path="res://scenes/game/characters/customer.tscn" id="5_stc0u"]
 [ext_resource type="PackedScene" uid="uid://cmtga7hq3oywn" path="res://scenes/game/objects/room.tscn" id="6_iyue2"]
+[ext_resource type="PackedScene" uid="uid://bumf12luyxitb" path="res://scenes/game/objects/buy_object.tscn" id="7_87jxv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ibqwj"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -766,5 +767,8 @@ position = Vector2(730, 160)
 
 [node name="Room2" parent="." instance=ExtResource("6_iyue2")]
 position = Vector2(891, 165)
+
+[node name="BuyObject" parent="." instance=ExtResource("7_87jxv")]
+position = Vector2(1025, 163)
 
 [connection signal="customer_spawned" from="CustomerSpawner" to="GameController" method="_on_customer_spawner_customer_spawned"]

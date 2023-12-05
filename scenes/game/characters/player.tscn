@@ -13,8 +13,9 @@ size = Vector2(120, 120)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_gc5ra")
 
-[node name="MoneyInventory" parent="." instance=ExtResource("2_sej3o")]
+[node name="MoneyInventory" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_sej3o")]
 position = Vector2(-558, -322)
+player = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)

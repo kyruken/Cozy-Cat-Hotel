@@ -1,6 +1,9 @@
 extends Node2D
 #Responsibility of GameController is to facilitate the game
-#Game is run by adding customers to the queues, moving them to rooms, and leaving
+	#Facilitate spawned customers entering a queue
+	#Control queued customers entering rooms
+	#Control money obtained after cleaning rooms
+	
 @export var queue_controller : QueueController
 @export var rooms_controller : RoomsController
 
